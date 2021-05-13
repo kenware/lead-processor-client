@@ -21,14 +21,17 @@ const Header = () => {
 
   return (
 <div className="">
-    <ul id="dropdown1" className="dropdown-content">
+    { user
+      ? (<ul id="dropdown1" className="dropdown-content">
      {user?.isActive
        ? (<li>< a onClick={() => seUserAway(false)} href="#!">Go Away</a></li>)
        : (<li>< a onClick={() => seUserAway(true)} href="#!">Set Active</a></li>)}
 
     <li className="divider"></li>
     <li><a onClick={() => logoutUser()} href="#!">Logout</a></li>
-    </ul>
+    </ul>)
+      : <ul></ul>}
+
     <nav className="nav nav-fixed-bar white">
         <div className="nav-wrapper">
             <Link className="brand-logo" to="/">
@@ -46,17 +49,19 @@ const Header = () => {
                 <li>
                   {user?.isAdmin
                     ? <Link to="/admin">Admin</Link>
-                    : <span/>
+                    : ''
                   }
 
                 </li>
                 <li><a href="##">{user?.email}</a></li>
-                <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">
+                { user
+                  ? <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">
                     <div className="row">
                     <i className="col material-icons icon-menu-fix">person</i>
                     <i className="col material-icons icon-menu-fix">arrow_drop_down</i>
                     </div></a>
                 </li>
+                  : <li></li>}
             </ul>
         </div>
     </nav>
@@ -69,14 +74,17 @@ const Header = () => {
         <li>
             {user?.isAdmin
               ? <Link to="/admin">Admin</Link>
-              : <span/>
+              : ''
             }
 
         </li>
-        {user?.isActive
-          ? (<li>< a onClick={() => seUserAway(false)} href="#!">Go Away</a></li>)
-          : (<li>< a onClick={() => seUserAway(true)} href="#!">Set Active</a></li>)}
-
+        {user
+          ? <li> {user.isActive ? < a onClick={() => seUserAway(false)} href="#!">Go Away</a> : ''} </li>
+          : <li></li>}
+        {user
+          ? <li> {!user.isActive ? < a onClick={() => seUserAway(true)} href="#!">Set Active</a> : ''} </li>
+          : <li></li>}
+          <li> {user ? <a onClick={() => logoutUser()} href="#!">Logout</a> : ''} </li>
         </ul>
 </div>
   )
