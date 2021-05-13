@@ -9,7 +9,7 @@ const BaseRoute = ({ component: Component, ...restOfProps }) => {
   const dispatch = useDispatch()
   let { user } = useSelector(state => state.user)
   if (!user) {
-    user = sessionStorage.getItem('user')
+    user = localStorage.getItem('user')
     user = user ? JSON.parse(user) : user
     if (user) dispatch(setUser(user))
   }

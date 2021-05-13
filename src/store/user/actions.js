@@ -24,7 +24,7 @@ export const login = ({ email, password }) => async dispatch => {
   try {
     dispatch(loaderToggle(true))
     const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/login`, { email, password })
-    sessionStorage.setItem('user', JSON.stringify(res.data))
+    localStorage.setItem('user', JSON.stringify(res.data))
     dispatch(loginSuccess(res.data))
     return dispatch(loaderToggle(false))
   } catch (e) {
@@ -38,7 +38,7 @@ export const register = (data) => async dispatch => {
   try {
     dispatch(loaderToggle(true))
     const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/users`, data)
-    sessionStorage.setItem('user', JSON.stringify(res.data))
+    localStorage.setItem('user', JSON.stringify(res.data))
     return dispatch(loginSuccess(res.data))
   } catch (e) {
     const error = getErrors(e.response?.data?.message)
@@ -59,11 +59,11 @@ export const changeUserStatus = (isActive, location) => async dispatch => {
   try {
     dispatch(loaderToggle(true))
     const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/status`, { isActive })
-    let user = sessionStorage.getItem('user')
+    let user = localStorage.getItem('user')
     user = user ? JSON.parse(user) : user
     user = { ...user, ...res.data }
     dispatch(loginSuccess(user))
-    sessionStorage.setItem('user', JSON.stringify(user))
+    localStorage.setItem('user', JSON.stringify(user))
     if (location === '/dashboard') {
       dispatch(getLead())
     }
@@ -77,7 +77,7 @@ export const changeUserStatus = (isActive, location) => async dispatch => {
 
 export const logout = () => async dispatch => {
   try {
-    sessionStorage.removeItem('user')
+    localStorage.removeItem('user')
     return dispatch(logoutSuccess())
   } catch (e) {
     return console.error(e.message)
