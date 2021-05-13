@@ -1,0 +1,79 @@
+
+.dashboard {
+    min-height: 100vh;
+    background-color: #dbedff;
+    .header {
+        padding-top: 8rem;
+    }
+  .dashboard-wrapper {
+    padding: 1rem 1rem 2rem;
+    margin: 3rem 10% 0px 10%;
+    .lead-content{
+        margin-top: 4rem;
+        border: 2px #493f3f3d solid;
+        min-height: 500px;
+        box-shadow: 0 0.9rem 0.9rem 0 rgba(0, 0, 0, 0.05);
+        background-color: #dbedff;
+        .lead-subject {
+            padding-top: 2rem;
+
+        }
+    
+        .lead-body {
+            margin-top: 1rem;
+            padding: 1rem;
+            justify-content: justify;
+    
+        }
+    }
+    .decision-btn {
+        box-shadow: 0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.05);
+        color:black;
+        background-color: #dbedff;
+        border: .5px #493f3f3d solid;
+        border-radius: 18%;
+
+    }
+
+  }
+}
+
+.admin {
+    .dashboard-wrapper {
+        background-color: #fafafa3b !important;
+    }
+    a {
+        color: rgba(0, 0, 0, 0.47) !important
+      }
+      .color {
+        color: rgba(0, 0, 0, 0.47) !important
+      }
+      table {
+        tbody {
+          tr:hover {
+            box-shadow: 0 0.125rem 0.5625rem 0 rgba(0, 0, 0, 0.05);
+            background-color: rgba(0, 0, 0, 0.05) !important;
+          }
+          .table-td{
+            cursor: pointer;
+          }
+        }
+      }
+      .waves-effect {
+        vertical-align: top !important;
+      }
+      .react-select{
+        padding: 1rem;
+        width: 250px;
+        height: 100px;
+        .css-yk16xz-control{
+           margin: 1rem;
+           .css-yk16xz-control{
+            border-style: none;
+           }
+        }
+      }
+      .table-body{
+        text-align: justify;
+      }
+}

@@ -1,0 +1,23 @@
+
+.register {
+    margin: auto;
+    padding: 3rem 3rem 2rem;
+    margin-top: 12rem !important;
+    max-width: 800px;
+    box-shadow: 0 0.09rem 0.09rem 0 rgba(0, 0, 0, 0.05);
+    border-radius: .25rem;
+    background-color: #fff;
+    // #d5dfea
+    .button-dev {
+        color: #a8bcd0;
+        button {
+            background-color: #dbedff;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+            color: black;
+        }
+    }
+}
+.input-field .prefix.active, .focus-visible {
+    color: #a8bcd0;
+}

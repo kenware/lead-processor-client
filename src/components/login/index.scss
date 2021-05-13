@@ -1,0 +1,24 @@
+
+.login {
+    margin: auto;
+    padding: 2rem 2rem 1rem;
+    margin-top: 15rem !important;
+    max-width: 600px;
+    box-shadow: 0 0.09rem 0.09rem 0 rgba(0, 0, 0, 0.05);
+    border-radius: .25rem;
+    background-color: #fff;
+    // #d5dfea
+    .button-dev {
+        color: #a8bcd0;
+        padding-top: 0rem;
+        button {
+            background-color: #dbedff;
+            margin-bottom: 0rem;
+            margin-top: 2rem;
+            color: black;
+        }
+    }
+}
+.input-field .prefix.active, .focus-visible {
+    color: #a8bcd0;
+}
