@@ -62,6 +62,7 @@ const Admin = () => {
         <tr>
             <th>Email Address</th>
             <th>Status</th>
+            <th>Decision</th>
             <th>Subject</th>
             <th>Message Body</th>
             <th>Date Sent</th>
@@ -76,6 +77,7 @@ const Admin = () => {
         <tr key={i}>
             <td className="table-td" >{item.email} </td>
             <td className="table-td"> {item.status}</td>
+            <td className="table-td"> {item.decision}</td>
             <td className="table-td"> {item.subject}</td>
             <td className="table-td"><span className="table-body">{item.body}</span></td>
             <td className="table-td"> {item.date}</td>
